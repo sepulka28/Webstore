@@ -5,12 +5,14 @@ import Container from 'react-bootstrap/Container'
 import { useState } from 'react'
 
 export default function Login () {
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   async function userLogin (e) {
   e.preventDefault();
-  const response = await fetch('http://localhost:5000/login', {
+
+  const response = await fetch('http://localhost:5000/api/login', {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
@@ -26,8 +28,12 @@ export default function Login () {
 
   if(data) {
 
+    localStorage.setItem('token', data.user);
+    alert('login successfull');
     window.location.href = '/dashboard'
+
   } else {
+
     alert("The data is incorrect. Please check your login and password.")
   }
  
@@ -35,7 +41,7 @@ export default function Login () {
   return (
     <div>
       <Container fluid className="log_in_form">
-      <Form onSubmit={ userLogin }>
+      <Form>
         <div className="title"><span className="login_title">Login form</span></div>
       <Form.Group controlId="formBasicEmail">
         <Form.Label className="mkdir mongoose_tutorial">Email</Form.Label>

@@ -1,0 +1,14 @@
+@media screen and (min-width: 540px) {
+  .brand_name{
+    font-size: 1.5rem;
+    
+  }
+
+}
+
+@media (min-width: 600px) and (max-width: 1800) { 
+  .brand_name {
+    font-size: 2rem;
+  
+  }
+}
