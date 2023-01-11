@@ -12,7 +12,7 @@ function Home () {
       <Container fluid>
         <Row className="homepage_row">
         <Col>
-            <h1 className="sign_up_slogan"><span className="sign_up_disc">Sign up</span> and get 10% discount for your next purchase!</h1>
+            <h1 className="sign_up_slogan"><span className="sign_up_disc"><a href="/register">Sign up</a></span> and get 10% discount for your next purchase!</h1>
         </Col>
         </Row>
         </Container>

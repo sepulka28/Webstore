@@ -165,16 +165,18 @@ span {
   
 }
 
-.sign_up_disc:hover {
+.sign_up_disc:hover a{
   opacity: 0.5;
+  color: #343434
 }
 
-.sign_up_disc {
+.sign_up_disc a {
   font-size: 2rem;
   color: #343434;
   font-family: garamond;
   cursor: pointer;
   justify-content: center;
+  text-decoration: none;
 }
 
 /* footer styling */

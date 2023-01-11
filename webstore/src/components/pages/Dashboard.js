@@ -13,10 +13,8 @@ const jwt = require('jsonwebtoken');
         const user = jwt.decode(token)
         if (!user) {
           localStorage.removeItem('token')
-          navigate('/login')}
-        // } else {
-        //   console.log('welcome')
-        // }
+          navigate('/login')
+        }
       }
     
     }, [])

@@ -29,8 +29,9 @@ export default function Login () {
   if(data) {
 
     localStorage.setItem('token', data.user);
+    
+    window.location.href = '/dashboard';
     alert('login successfull');
-    window.location.href = '/dashboard'
 
   } else {
 

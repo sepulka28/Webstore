@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import {  toast } from 'react-toast'
+import validatePassword  from '../../model';
 
 export default function Register () {
 
@@ -25,19 +25,18 @@ export default function Register () {
       name, 
       email,
       password,
-    }),
-    
+    }), 
   })
+
 
 
   const data = await response.json();
 
-  if(data.status === 'ok') {
-
+  if (validatePassword || data.status === "ok"){
     navigate('/login');
     alert('Successfully registered')
-  } 
-}
+  } }
+
 
   return (
     <div>
@@ -60,7 +59,7 @@ export default function Register () {
         <Form.Control input type="password" placeholder="Enter your password" className="password_reg_label" onChange={(e) => setPassword( e.target.value )}/>
       </Form.Group>
      
-      <Button type="submit" disabled="true"className="log_in_form_btn" onClick={ registerUser }>
+      <Button type="submit" className="log_in_form_btn" onClick={ registerUser }>
         Register
       </Button>
 
