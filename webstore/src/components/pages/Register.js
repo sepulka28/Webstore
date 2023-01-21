@@ -2,11 +2,21 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+// import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import validatePassword  from '../../model';
+import { useForm } from "react-hook-form";
+// import { ErrorMessage } from '@hookform/error-message';
+// import validateData from '../../model';
+
 
 export default function Register () {
+
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const onSubmit = data => console.log(data);
+
+  console.log(errors)
 
   const navigate = useNavigate();
 
@@ -15,6 +25,7 @@ export default function Register () {
   const [password, setPassword] = useState("")
 
   async function registerUser (e) {
+ 
   e.preventDefault();
   const response = await fetch('http://localhost:5000/api/register', {
     method: "POST",
@@ -28,35 +39,38 @@ export default function Register () {
     }), 
   })
 
-
-
   const data = await response.json();
 
-  if (validatePassword || data.status === "ok"){
+  if (data.status === "ok"){
+
     navigate('/login');
-    alert('Successfully registered')
-  } }
+    alert('Successfully registered');
+  }}
 
 
   return (
     <div>
       <Container fluid className="log_in_form">
-      <Form onSubmit={ registerUser } >
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <div className="title"><span className="sign_in_title">Sign Up Form</span></div>
       <Form.Group>
         <Form.Label >Name*</Form.Label>
-        <Form.Control placeholder="Enter your name" className="name_label" onChange={(e) => setName( e.target.value )}/>
-       
+          <Form.Control placeholder="Enter your name" {...register("name", {required: true, minLength: 2, maxLength: 20, message: "This field is required"} )} className="name_label" onChange={(e) => setName( e.target.value )}/>
+         <p>{errors.name}</p>
       </Form.Group>
 
       <Form.Group>
         <Form.Label className="email_reg_label_text">Email*</Form.Label>
-        <Form.Control type="email" placeholder="Enter your email" className="email_reg_label" onChange={(e) => setEmail( e.target.value )}/>
+        <Form.Control type="email" {...register("email", {required: true, message: "This field is required"} )} placeholder="Enter your email" className="email_reg_label" onChange={(e) => setEmail( e.target.value )} />
+        <p>{errors.name}</p>
       </Form.Group>
 
       <Form.Group>
         <Form.Label className="password_reg_label_text">Password*</Form.Label>
-        <Form.Control input type="password" placeholder="Enter your password" className="password_reg_label" onChange={(e) => setPassword( e.target.value )}/>
+        <Form.Control input type="password" 
+        {...register("password", {required: true, minLength:
+        {value: 8, message: "The password must contain at least 8 digits"} }) } placeholder="Enter your password" className="password_reg_label" onChange={(e) => setPassword( e.target.value )}/>
+         <p>{errors.name}</p>
       </Form.Group>
      
       <Button type="submit" className="log_in_form_btn" onClick={ registerUser }>
@@ -64,7 +78,7 @@ export default function Register () {
       </Button>
 
       <div><p className="already_a_member">Already a member? <a href="./login"> Log in</a></p></div>
-      
+
     </Form>
     </Container>
     </div>
