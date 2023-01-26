@@ -1,10 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+
 
 const jwt = require('jsonwebtoken');
 
   const Dashboard = () => {
+
+    const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
     useEffect (() => {
@@ -14,15 +18,19 @@ const jwt = require('jsonwebtoken');
         if (!user) {
           localStorage.removeItem('token')
           navigate('/login')
+        } else {
+          setUsername(user.name)
         }
       }
     
     }, [])
+
   return (
     <div className="user_dashboard">
-      <p className="welcome_message">Successfully logged in!</p>
+      <p className="welcome_message">Hello {username}!</p>
     </div>
   )
 }
 
-export default Dashboard
+export default Dashboard;
+
