@@ -1,13 +1,20 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
-import { useState } from 'react'
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login () {
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   async function userLogin (e) {
   e.preventDefault();
@@ -25,22 +32,31 @@ export default function Login () {
   })
  
   const data = await response.json();
+  console.log(data)
 
-  if(data) {
-
-    localStorage.setItem('token', data.user);
+  if (data.user) {
     
-    window.location.href = '/dashboard';
-    alert('login successfull');
+    localStorage.setItem('token', data.user);
 
+    setTimeout(() => {
+      navigate('/dashboard');
+    }, 2000);
+
+    toast.success("Logged in!")
+    
   } else {
-
-    alert("The data is incorrect. Please check your login and password.")
+    toast.error("User doesn't exist. Please, check the credentials.")
   }
- 
-}
+};
+
   return (
     <div>
+      <ToastContainer position="top-center" 
+      autoClose={1000}
+      pauseOnHover={false}
+      hideProgressBar={true}
+      closeOnClick={true}/>
+      
       <Container fluid className="log_in_form">
       <Form>
         <div className="title"><span className="login_title">Login form</span></div>
@@ -60,7 +76,14 @@ export default function Login () {
       </Button>
       <div><p className="not_a_member">Not a member yet? <a href="./register"> Sign up now!</a></p></div>
     </Form>
+    
     </Container>
     </div>
   );
-  }
+}
+
+ 
+  
+  
+ 
+

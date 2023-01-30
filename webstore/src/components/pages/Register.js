@@ -5,6 +5,9 @@ import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import * as Yup from 'yup';
 
@@ -85,16 +88,26 @@ export default function Register () {
 
   const data = await response.json();
 
-  if (data.status === "ok"){
+  if (data.status === 200){
 
-    navigate('/login');
-    alert('Successfully registered');
+    setTimeout(() => {
+      navigate('/login');
+    }, 2000);
+
+    toast.success("Successfully registered!")
+
+  } else if (response.status === 400){
+    toast.error("User with this email already exists")
   }}
 
 
   return (
     
     <div>
+      <ToastContainer position="top-center" 
+      autoClose={2000}
+      pauseOnHover={false}
+      hideProgressBar={true}/>
       
       <Container fluid className="log_in_form">
       
@@ -111,7 +124,7 @@ export default function Register () {
         <Form.Label className="email_reg_label_text">Email*</Form.Label>
         <Form.Control type="email" placeholder="Enter your email" className="email_reg_label" id = "email" value = {formik.values.email} onChange={(e) => setEmail( e.target.value )} onInput = {formik.handleChange}  onBlur={formik.handleBlur}/>
         {formik.touched.email && formik.errors.email ? ( <p className = "error_paragraph">{formik.errors.email}</p>  ) : null}
-        
+
       </Form.Group>
 
       <Form.Group>
