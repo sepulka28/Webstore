@@ -12,21 +12,28 @@ import { BsSuitHeart } from "react-icons/bs";
 import { TfiSearch } from "react-icons/tfi";
 import Button from 'react-bootstrap/Button';
 
-// import { handleLogOut } from '../pages/Login';
-
 
 function NavbarElement () {
 
   const [buttonName, setButtonName] = useState('LOG IN');
+  const [isLoggedin, setIsLoggedin] = useState(true);
   let location = useLocation();
 
-  useEffect(() => {
+    useEffect(() => {
     if(location.pathname === '/dashboard'){
-      setButtonName("LOG OUT")
+      setButtonName("LOG OUT");
     }
     
   }, [location.pathname]);
-  
+
+  const handleLogOut = () => {
+
+    localStorage.clear();
+    isLoggedin(false);
+
+    return { isLoggedin, setIsLoggedin, handleLogOut };
+  }; 
+
   return (
     <Navbar className="nav" expand="lg">
     <Container fluid className="nav_container">
@@ -79,8 +86,7 @@ function NavbarElement () {
           
           <span className="shopping_bag"><BsHandbag className='shop_bag_icon'/> SHOPPING BAG</span>
           <span className="favourite"><BsSuitHeart className='fav_icon'/> FAVOURITE</span>
-          <Button className="log_in_button" href="/login"  onClick={() => {setButtonName(buttonName)}}><span><VscAccount className="log_in_icon"/> {buttonName}</span></Button>
-         
+          <Button className="log_in_button" href="/login" onClick={buttonName === 'LOG OUT' ? handleLogOut : () => {}}><span><VscAccount className="log_in_icon"/> {buttonName}</span></Button>
           </div>
           
     </Container>
