@@ -10,6 +10,7 @@ import { BsHandbag } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
 import { BsSuitHeart } from "react-icons/bs";
 import { TfiSearch } from "react-icons/tfi";
+import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 
@@ -17,6 +18,9 @@ function NavbarElement () {
 
   const [buttonName, setButtonName] = useState('LOG IN');
   const [isLoggedin, setIsLoggedin] = useState(true);
+
+  const navigate = useNavigate();
+
   let location = useLocation();
 
     useEffect(() => {
@@ -29,9 +33,11 @@ function NavbarElement () {
   const handleLogOut = () => {
 
     localStorage.clear();
-    isLoggedin(false);
+    setIsLoggedin(false);
+    navigate('/login')
 
-    return { isLoggedin, setIsLoggedin, handleLogOut };
+
+    return { isLoggedin, handleLogOut };
   }; 
 
   return (
