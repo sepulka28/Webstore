@@ -7,9 +7,6 @@ import { MdLocationOn } from "react-icons/md";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 
 
-// import Link from 'react-router-dom';
-
-
 function Footer () {
   return (
     <div>
