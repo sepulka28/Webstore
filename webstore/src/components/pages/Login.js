@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login () {
 
-  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -42,11 +41,13 @@ export default function Login () {
       navigate('/dashboard');
     }, 2000);
 
-    toast.success("Logged in!")
+    toast.success("Logged in!");
     
   } else {
     toast.error("User doesn't exist. Please, check the credentials.")
-  }
+  };
+
+
 };
 
   return (
@@ -56,7 +57,7 @@ export default function Login () {
       pauseOnHover={false}
       hideProgressBar={true}
       closeOnClick={true}/>
-      
+
       <Container fluid className="log_in_form">
       <Form>
         <div className="title"><span className="login_title">Login form</span></div>
