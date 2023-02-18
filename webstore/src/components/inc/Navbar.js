@@ -34,10 +34,9 @@ function NavbarElement () {
 
     localStorage.clear();
     setIsLoggedin(false);
-    navigate('/login')
+    navigate('/login');
 
-
-    return { isLoggedin, handleLogOut };
+    return isLoggedin;
   }; 
 
   return (

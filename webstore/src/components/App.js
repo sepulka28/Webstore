@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarElement from "./inc/Navbar"
-// import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Home from "./pages/Home"
 import Products from "./pages/Products"

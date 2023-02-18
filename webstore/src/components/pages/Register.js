@@ -11,29 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import * as Yup from 'yup';
 
-    const validateInput = values => {
-    const errors = {};
-
-    if(!values.name) {
-      errors.name = "This field is required"
-    } else if (values.name.length > 20){
-      errors.name = "Name can't exceed 20 characters"
-    }
-
-    if(!values.email) {
-      errors.email = "This field is required"
-    } 
-
-    if(!values.password) {
-      errors.password = "This field is required"
-    } else if (values.password.length < 8){
-      errors.password = "Password must be at least 8 characters"
-    }
-
-    return errors
-  }
-
-
 export default function Register () {
 
   const formik = useFormik({
@@ -46,7 +23,7 @@ export default function Register () {
 
     validationSchema: Yup.object({
       name: Yup.string()
-        .max(15, "Must be 15 characters or less")
+        .max(15, "Name must be 15 characters or less")
         .required("This field is required"),
         
       email: Yup.string().email("Invalid email address").required("This field is required"),
@@ -56,12 +33,6 @@ export default function Register () {
         .max(20, "Password must be 20 characters or less")
         .required("This field is required"),
     }),
-
-    validateInput,
-    onSubmit: values => {
-      alert(JSON.stringify(values));
-    },
-    
   });
 
 
@@ -107,8 +78,9 @@ export default function Register () {
       <ToastContainer position="top-center" 
       autoClose={2000}
       pauseOnHover={false}
-      hideProgressBar={true}/>
-      
+      hideProgressBar={true}
+      closeOnClick={true}/>
+
       <Container fluid className="log_in_form">
       
       <Form onSubmit={formik.handleSubmit}>
