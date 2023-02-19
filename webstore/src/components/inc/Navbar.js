@@ -56,7 +56,7 @@ function NavbarElement () {
             
             <NavDropdown title="Products" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/action"></NavDropdown.Item>
-              <NavDropdown.Item href="/action4">
+              <NavDropdown.Item href="/AC">
                 Armchairs & Chairs
               </NavDropdown.Item>
               <NavDropdown.Item href="/action5">

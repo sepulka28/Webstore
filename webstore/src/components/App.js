@@ -8,6 +8,7 @@ import Footer from "./inc/Footer"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Dashboard from "./pages/Dashboard"
+import AC from "./pages/AC"
 import './custom.css'
 import './responsive.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -32,6 +33,8 @@ function App() {
         <Route path="/register" element={<Register />} /> 
 
         <Route path="/dashboard" element={<Dashboard />} /> 
+
+        <Route path="/AC" element={<AC />} /> 
      
      </Routes>
      

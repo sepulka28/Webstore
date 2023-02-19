@@ -190,11 +190,7 @@ span {
   margin-top: 50vh;
   background-color: #403f3f;
   text-align: center;
-  
-  @media screen and (min-height: 375px) {
-    display: flex;
-    flex-direction: column;
-  }
+
 
 }
 
@@ -355,3 +351,44 @@ span {
   color: #0dbc79;
   margin: auto;
 }
+
+/* Cards styling */
+
+.ac_card_container {
+  display: flex;
+  background-color:rgba(0, 0, 0, 0.1);
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  min-height: 80vh;
+
+
+}
+
+.card1_ac, .card2_ac, .card3_ac {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  
+}
+
+.card4_ac, .card5_ac, .card6_ac {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 0 3rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  
+}
+/* 
+body {
+  overflow: hidden;
+} */
