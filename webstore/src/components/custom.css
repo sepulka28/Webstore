@@ -390,4 +390,5 @@ span {
 .shop_bag_icon_card, .favourite_icon_card {
   font-size: 2rem !important;
   padding: 1px;
+  outline: none !important;
 }

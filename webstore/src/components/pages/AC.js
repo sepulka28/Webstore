@@ -20,29 +20,40 @@ function Cards () {
   const products = [
 
     { id: 1, title: "Product 1", image: Image4 },
-    { id: 2, title: "Product 1", image: Image5 },
-    { id: 3, title: "Product 1", image: Image6 },
-    { id: 4, title: "Product 1", image: Image7 },
-    { id: 5, title: "Product 1", image: Image8 },
-    { id: 6, title: "Product 1", image: Image9 }
+    { id: 2, title: "Product 2", image: Image5 },
+    { id: 3, title: "Product 3", image: Image6 },
+    { id: 4, title: "Product 4", image: Image7 },
+    { id: 5, title: "Product 5", image: Image8 },
+    { id: 6, title: "Product 6", image: Image9 }
     
   ]
 
   const addCartProduct = product => {
     const index = cart.findIndex(p => p.id === product.id);
-    if (index !== -1) {
-      setCart(cart.filter(p => p.id !== product.id));
-    } else {
+    if (index === -1) {
       setCart([...cart, { ...product }]);
+      const existingProducts = localStorage.getItem('products');
+      const newProduct = { id: product.id, title: product.title };
+      if (!existingProducts) {
+        localStorage.setItem('products', JSON.stringify([newProduct]));
+      }
+    } else {
+      setCart(cart.filter(p => p.id !== product.id));
+      localStorage.removeItem(`products-${product.id}`);
     }
   };
   
   const addLikedProduct = product => {
     const index = fav.findIndex(p => p.id === product.id);
-    if (index !== -1) {
-      setFav(fav.filter(p => p.id !== product.id));
-    } else {
+    if (index === -1) {
       setFav([...fav, { ...product }]);
+      const existingFav = localStorage.getItem('fav');
+      const newFav = { id: product.id, title: product.title };
+      if (!existingFav) {
+        localStorage.setItem('products', JSON.stringify([newFav]));
+      }
+    } else {
+      setFav(fav.filter(p => p.id !== product.id));
     }
   };
   
@@ -50,8 +61,8 @@ function Cards () {
   return (
     <div className="ac_card_container container-fluid " >
     {products.map((product) => (
-    <div>
-    <Card key={product.id} className="card_ac" style={{ width: '18rem' }}>
+    <div key={product.id}>
+    <Card className="card_ac" style={{ width: '18rem' }}>
       <Card.Img variant="center" src={product.image} className="image" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
