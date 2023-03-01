@@ -74,6 +74,11 @@
 
 }
 
+.navbar_icons a {
+  text-decoration: none;
+  
+}
+
 .log_in_button {
   background-color: #538b74 !important;
   border: none !important;
@@ -82,12 +87,14 @@
   max-height: 5rem;
 }
 
+
 .log_in_button:hover{
   opacity: 0.8;
 }
 
 .log_in_icon {
   margin-bottom: 4px;
+  
 
 }
 
@@ -95,6 +102,7 @@ span {
   font-size: max(1rem, 10px);
   font-family: Mirador;
   margin-top: 0.4rem;
+  
 }
 
 .search_btn {
@@ -105,19 +113,20 @@ span {
 
 }
 
-.navbar_icons {
-  gap: 3rem;
-}
-
-
 .fav_icon {
   font-size: 1.5rem;
   vertical-align: middle;
+  color: #454851;
 }
 
 .shop_bag_icon {
   font-size: 1.5rem;
   vertical-align: middle;
+  color: #454851;
+}
+
+.shopping_bag {
+  color: #454851;
 }
 
 .shopping_bag:hover {
@@ -125,7 +134,11 @@ span {
   cursor: pointer;
 }
 
-.favourite:hover {
+.favourites {
+  color: #454851;
+}
+
+.favourites:hover {
   opacity: 0.5;
   cursor: pointer;
   
@@ -391,4 +404,5 @@ span {
   font-size: 2rem !important;
   padding: 1px;
   outline: none !important;
+  cursor: pointer;
 }

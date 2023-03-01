@@ -19,11 +19,11 @@ function Cards () {
 
   const products = [
 
-    { id: 1, title: "Product 1", image: Image4, description: "High-quality high chair for your little highness. Order now and enjoy free shipping!" },
+    { id: 1, title: "Product 1", image: Image4, description: "Upgrade your little one's seating experience with our high-quality high chair. Order now and take advantage of our free shipping offer!" },
     { id: 2, title: "Product 2", image: Image5, description: "Elevate your space with our premium chair. Designed with style and comfort in mind. Order now and enjoy free shipping!" },
-    { id: 3, title: "Product 3", image: Image6, description: "Relax in luxury with our plush chair. Perfect for unwinding after a long day. Order now for free shipping!" },
-    { id: 4, title: "Product 4", image: Image7, description: "Upgrade your space with our sleek and contemporary chair. Combining style and comfort, it's perfect for any modern home." },
-    { id: 5, title: "Product 5", image: Image8, description: "Experience the perfect blend of style and functionality with our simple wooden chair. Order now and enjoy sturdy, comfortable seating with free shipping!" },
+    { id: 3, title: "Product 3", image: Image6, description: "Indulge in comfort with our cozy chair, designed to help you unwind after a long day. Order now and enjoy the added bonus of free shipping!" },
+    { id: 4, title: "Product 4", image: Image7, description: "Elevate your home with our stylish and modern chair. Designed to seamlessly blend style and comfort, it's the perfect addition to any space." },
+    { id: 5, title: "Product 5", image: Image8, description: "Experience the perfect blend of style and functionality with our simple wooden chair. Order now and enjoy sturdy, comfortable seating." },
     { id: 6, title: "Product 6", image: Image9, description: "Enhance your home decor with our selection of comfortable and stylish chairs. Enjoy free shipping on your purchase today!" }
     
   ]

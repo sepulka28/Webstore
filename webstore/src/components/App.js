@@ -12,6 +12,8 @@ import AC from "./pages/AC"
 import './custom.css'
 import './responsive.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ShoppingBag from './pages/ShoppingBag';
+import Favourites from './pages/Favourites';
 
 
 function App() {
@@ -35,6 +37,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} /> 
 
         <Route path="/AC" element={<AC />} /> 
+
+        <Route path="/shoppingbag" element={<ShoppingBag />} /> 
+
+        <Route path="/favourites" element={<Favourites />} /> 
      
      </Routes>
      

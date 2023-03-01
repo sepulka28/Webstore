@@ -89,8 +89,8 @@ function NavbarElement () {
 
           <div className="navbar_icons">
           
-          <span className="shopping_bag"><BsHandbag className='shop_bag_icon'/> SHOPPING BAG</span>
-          <span className="favourite"><BsSuitHeart className='fav_icon'/> FAVOURITE</span>
+          <a href="/shoppingbag"><span className="shopping_bag"><BsHandbag className='shop_bag_icon'/> SHOPPING BAG</span></a>
+          <a href="/favourites"><span className="favourites"><BsSuitHeart className='fav_icon'/> FAVOURITES</span></a>
           <Button className="log_in_button" href="/login" onClick={buttonName === 'LOG OUT' ? handleLogOut : () => {}}><span><VscAccount className="log_in_icon"/> {buttonName}</span></Button>
           </div>
           
