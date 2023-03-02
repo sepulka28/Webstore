@@ -59,13 +59,13 @@ function NavbarElement () {
               <NavDropdown.Item href="/AC">
                 Armchairs & Chairs
               </NavDropdown.Item>
-              <NavDropdown.Item href="/action5">
+              <NavDropdown.Item href="/Tables">
                 Dining & Coffe Tables
               </NavDropdown.Item>
-              <NavDropdown.Item href="/action5">
+              <NavDropdown.Item href="/Dressers">
                 Dressers
               </NavDropdown.Item>
-              <NavDropdown.Item href="/action5">
+              <NavDropdown.Item href="/Sofas">
                 Sofas
               </NavDropdown.Item>
             </NavDropdown>

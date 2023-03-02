@@ -6,8 +6,7 @@ import Image4 from '../images/image4.jpg';
 import Image5 from '../images/image5.jpg';
 import Image6 from '../images/image6.jpg';
 import Image7 from '../images/image7.jpg';
-import Image8 from '../images/image8.jpg';
-import Image9 from '../images/image9.jpg';
+
 
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
@@ -23,8 +22,7 @@ function Cards () {
     { id: 2, title: "Product 2", image: Image5, description: "Elevate your space with our premium chair. Designed with style and comfort in mind. Order now and enjoy free shipping!" },
     { id: 3, title: "Product 3", image: Image6, description: "Indulge in comfort with our cozy chair, designed to help you unwind after a long day. Order now and enjoy the added bonus of free shipping!" },
     { id: 4, title: "Product 4", image: Image7, description: "Elevate your home with our stylish and modern chair. Designed to seamlessly blend style and comfort, it's the perfect addition to any space." },
-    { id: 5, title: "Product 5", image: Image8, description: "Experience the perfect blend of style and functionality with our simple wooden chair. Order now and enjoy sturdy, comfortable seating." },
-    { id: 6, title: "Product 6", image: Image9, description: "Enhance your home decor with our selection of comfortable and stylish chairs. Enjoy free shipping on your purchase today!" }
+
     
   ]
 
@@ -39,7 +37,7 @@ function Cards () {
       }
     } else {
       setCart(cart.filter(p => p.id !== product.id));
-      localStorage.removeItem(`products-${product.id}`);
+      localStorage.removeItem('products');
     }
   };
   
@@ -54,6 +52,7 @@ function Cards () {
       }
     } else {
       setFav(fav.filter(p => p.id !== product.id));
+      localStorage.removeItem('products');
     }
   };
   
