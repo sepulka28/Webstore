@@ -18,10 +18,10 @@ function Tables () {
 
   const products = [
 
-    { id: 5, title: "Product 1", image: Image10, description: "Upgrade your living room's decor with our high-quality coffee table. Elevate your space with its stylish design and sturdy construction." },
-    { id: 6, title: "Product 2", image: Image11, description: "Upgrade your dining room with this elegant and stylish wooden table that seats many. Perfect for hosting memorable gatherings." },
-    { id: 7, title: "Product 3", image: Image12, description: "Introduce a modern flair to your space with our chic white table, boasting a stylish rounded design. Order now and enjoy free shipping!" },
-    { id: 8, title: "Product 4", image: Image13, description: "Bring warmth and comfort to your living room with our artisanal low wooden table, perfect for cozy nights in front of the TV." },
+    { id: 5, title: "Table 1", image: Image10, description: "Upgrade your living room's decor with our high-quality coffee table. Elevate your space with its stylish design and sturdy construction." },
+    { id: 6, title: "Table 2", image: Image11, description: "Upgrade your dining room with this elegant and stylish wooden table that seats many. Perfect for hosting memorable gatherings." },
+    { id: 7, title: "Table 3", image: Image12, description: "Introduce a modern flair to your space with our chic white table, boasting a stylish rounded design. Order now and enjoy free shipping!" },
+    { id: 8, title: "Table 4", image: Image13, description: "Bring warmth and comfort to your living room with our artisanal low wooden table, perfect for cozy nights in front of the TV." },
  
   ]
 

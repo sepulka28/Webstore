@@ -18,10 +18,10 @@ function Sofas () {
 
   const products = [
 
-    { id: 10, title: "Sofa 1", image: Image19, description: "Elevate your living space with our rich and sumptuous brown leather sofa, designed for comfort and style. Sink in and savor the experience." },
-    { id: 11, title: "Sofa 2", image: Image20, description: "Create a luxurious oasis in your living space with our white long sofa, perfect for those who seek both style and comfort." },
-    { id: 12, title: "Sofa 3", image: Image21, description: "Indulge in ultimate comfort with our luxurious quilt grey sofa, perfect for creating a cozy and inviting atmosphere in any living space." },
-    { id: 13, title: "Sofa 4", image: Image22, description: "Indulge in the serene comfort of our deep green sofa - the perfect addition to elevate your living space's elegance and simplicity." },
+    { id: 14, title: "Sofa 1", image: Image19, description: "Elevate your living space with our rich and sumptuous brown leather sofa, designed for comfort and style. Sink in and savor the experience." },
+    { id: 15, title: "Sofa 2", image: Image20, description: "Create a luxurious oasis in your living space with our white long sofa, perfect for those who seek both style and comfort." },
+    { id: 16, title: "Sofa 3", image: Image21, description: "Indulge in ultimate comfort with our luxurious quilt grey sofa, perfect for creating a cozy and inviting atmosphere in any living space." },
+    { id: 17, title: "Sofa 4", image: Image22, description: "Indulge in the serene comfort of our deep green sofa - the perfect addition to elevate your living space's elegance and simplicity." },
  
   ]
 

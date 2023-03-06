@@ -18,10 +18,10 @@ function Dressers () {
 
   const products = [
 
-    { id: 10, title: "Product 2", image: Image15, description: "Elevate your modern bathroom decor with our sleek and stylish dresser. Perfect for storing your essentials in a sophisticated way. Order now!" },
-    { id: 11, title: "Product 3", image: Image16, description: "Elevate your storage game with our spacious black dresser, featuring numerous drawers to keep your belongings organized in style." },
-    { id: 12, title: "Product 4", image: Image17, description: "Light-brown dresser, designed to bring practicality to your cozy space. With various drawers, offering ample storage for all your essentials." },
-    { id: 13, title: "Product 5", image: Image18, description: "Upgrade your bedroom with our narrow, deep brown dresser made of high-quality wood and featuring five spacious drawers." },
+    { id: 10, title: "Dresser 1", image: Image15, description: "Elevate your modern bathroom decor with our sleek and stylish dresser. Perfect for storing your essentials in a sophisticated way. Order now!" },
+    { id: 11, title: "Dresser 2", image: Image16, description: "Elevate your storage game with our spacious black dresser, featuring numerous drawers to keep your belongings organized in style." },
+    { id: 12, title: "Dresser 3", image: Image17, description: "Light-brown dresser, designed to bring practicality to your cozy space. With various drawers, offering ample storage for all your essentials." },
+    { id: 13, title: "Dresser 4", image: Image18, description: "Upgrade your bedroom with our narrow, deep brown dresser made of high-quality wood and featuring five spacious drawers." },
  
   ]
 

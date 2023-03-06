@@ -11,17 +11,17 @@ import Image7 from '../images/image7.jpg';
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
 
-function Cards () {
+function Chairs () {
 
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState([]);
 
   const products = [
 
-    { id: 1, title: "Product 1", image: Image4, description: "Upgrade your little one's seating experience with our high-quality high chair. Order now and take advantage of our free shipping offer!" },
-    { id: 2, title: "Product 2", image: Image5, description: "Elevate your space with our premium chair. Designed with style and comfort in mind. Order now and enjoy free shipping!" },
-    { id: 3, title: "Product 3", image: Image6, description: "Indulge in comfort with our cozy chair, designed to help you unwind after a long day. Order now and enjoy the added bonus of free shipping!" },
-    { id: 4, title: "Product 4", image: Image7, description: "Elevate your home with our stylish and modern chair. Designed to seamlessly blend style and comfort, it's the perfect addition to any space." },
+    { id: 1, title: "Chair 1", image: Image4, description: "Upgrade your little one's seating experience with our high-quality high chair. Order now and take advantage of our free shipping offer!" },
+    { id: 2, title: "Chair 2", image: Image5, description: "Elevate your space with our premium chair. Designed with style and comfort in mind. Order now and enjoy free shipping!" },
+    { id: 3, title: "Chair 3", image: Image6, description: "Indulge in comfort with our cozy chair, designed to help you unwind after a long day. Order now and enjoy the added bonus of free shipping!" },
+    { id: 4, title: "Chair 4", image: Image7, description: "Elevate your home with our stylish and modern chair. Designed to seamlessly blend style and comfort, it's the perfect addition to any space." },
 
     
   ]
@@ -79,4 +79,4 @@ function Cards () {
   );
 }
 
-export default Cards;
+export default Chairs;
