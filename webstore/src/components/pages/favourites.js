@@ -1,4 +1,5 @@
 import React from 'react';
+// import Chairs from './AC'
 
 function Favourites () {
   return (

@@ -1,82 +1,92 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
+import { FaShoppingCart } from "react-icons/fa";
+import { IoIosHeart } from "react-icons/io";
 
+import Product from './Products';
 import Image4 from '../images/image4.jpg';
 import Image5 from '../images/image5.jpg';
 import Image6 from '../images/image6.jpg';
 import Image7 from '../images/image7.jpg';
 
+class AC extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cart: [],
+      fav: [],
+    };
+    this.addCartProduct = this.addCartProduct.bind(this);
+    this.addLikedProduct = this.addLikedProduct.bind(this);
+  }
 
-import { FaShoppingCart } from "react-icons/fa";
-import { IoIosHeart } from "react-icons/io";
-
-function Chairs () {
-
-  const [cart, setCart] = useState([]);
-  const [fav, setFav] = useState([]);
-
-  const products = [
-
-    { id: 1, title: "Chair 1", image: Image4, description: "Upgrade your little one's seating experience with our high-quality high chair. Order now and take advantage of our free shipping offer!" },
-    { id: 2, title: "Chair 2", image: Image5, description: "Elevate your space with our premium chair. Designed with style and comfort in mind. Order now and enjoy free shipping!" },
-    { id: 3, title: "Chair 3", image: Image6, description: "Indulge in comfort with our cozy chair, designed to help you unwind after a long day. Order now and enjoy the added bonus of free shipping!" },
-    { id: 4, title: "Chair 4", image: Image7, description: "Elevate your home with our stylish and modern chair. Designed to seamlessly blend style and comfort, it's the perfect addition to any space." },
-
-    
-  ]
-
-  const addCartProduct = product => {
-    const index = cart.findIndex(p => p.id === product.id);
-    if (index === -1) {
-      setCart([...cart, { ...product }]);
-      const existingProducts = localStorage.getItem('products');
-      const newProduct = { id: product.id, title: product.title };
-      if (!existingProducts) {
-        localStorage.setItem('products', JSON.stringify([newProduct]));
-      }
+  addCartProduct(product) {
+    const { cart } = this.state;
+    if (!cart.some((p) => p.id === product.id)) {
+      this.setState({ cart: [...cart, product] });
     } else {
-      setCart(cart.filter(p => p.id !== product.id));
-      localStorage.removeItem('products');
+      this.setState({ cart: cart.filter((p) => p.id !== product.id) });
     }
-  };
-  
-  const addLikedProduct = product => {
-    const index = fav.findIndex(p => p.id === product.id);
-    if (index === -1) {
-      setFav([...fav, { ...product }]);
-      const existingFav = localStorage.getItem('fav');
-      const newFav = { id: product.id, title: product.title };
-      if (!existingFav) {
-        localStorage.setItem('products', JSON.stringify([newFav]));
-      }
-    } else {
-      setFav(fav.filter(p => p.id !== product.id));
-      localStorage.removeItem('products');
-    }
-  };
-  
+  }
 
-  return (
-    <div className="ac_card_container container-fluid " >
-    {products.map((product) => (
-    <div key={product.id}>
-    <Card className="card_ac" style={{ width: '18rem' }}>
-      <Card.Img variant="center" src={product.image} className="image" />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>
-          {product.description}
-        </Card.Text>
-        <FaShoppingCart className='shop_bag_icon_card' onClick={() => addCartProduct(product)} style={{ color: cart.some((p) => p.id === product.id) ? "#3fa24f" : "black" }}/> <IoIosHeart className='favourite_icon_card' 
-        onClick={() => addLikedProduct(product)} style={{ color: fav.some((p) => p.id === product.id) ? "red" : "black" }}/>
-      </Card.Body>
-    </Card>
-    </div>
-     ))}
-    </div>
-    
-  );
+  addLikedProduct(product) {
+    const { fav } = this.state;
+    if (!fav.some((p) => p.id === product.id)) {
+      this.setState({ fav: [...fav, product] });
+    } else {
+      this.setState({ fav: fav.filter((p) => p.id !== product.id) });
+    }
+  }
+
+  render() {
+    const products = [
+      new Product(
+        1,
+        "Sofa 1",
+        Image4,
+        "Elevate your living space with our rich and sumptuous brown leather sofa, designed for comfort and style. Sink in and savor the experience."
+      ),
+      new Product(
+        2,
+        "Sofa 2",
+        Image5,
+        "Create a luxurious oasis in your living space with our white long sofa, perfect for those who seek both style and comfort."
+      ),
+      new Product(
+        3,
+        "Sofa 3",
+        Image6,
+        "Indulge in ultimate comfort with our luxurious quilt grey sofa, perfect for creating a cozy and inviting atmosphere in any living space."
+      ),
+      new Product(
+        4,
+        "Sofa 4",
+        Image7,
+        "Indulge in the serene comfort of our deep green sofa - the perfect addition to elevate your living space's elegance and simplicity."
+      )
+    ];
+
+    const { cart, fav } = this.state;
+    return (
+      <div className="ac_card_container container-fluid ">
+        {products.map((product) => (
+          <div key={product.id}>
+            <Card className="card_ac" style={{ width: '18rem' }}>
+              <Card.Img variant="center" src={product.image} className="image" />
+              <Card.Body>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Text>
+                  {product.description}
+                </Card.Text>
+                <FaShoppingCart className='shop_bag_icon_card' onClick={() => this.addCartProduct(product)} style={{ color: cart.some((p) => p.id === product.id) ? "#3fa24f" : "black" }}/> 
+                <IoIosHeart className='favourite_icon_card' onClick={() => this.addLikedProduct(product)} style={{ color: fav.some((p) => p.id === product.id) ? "red" : "black" }}/>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
-export default Chairs;
+export {AC};

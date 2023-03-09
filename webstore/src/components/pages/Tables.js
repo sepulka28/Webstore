@@ -33,6 +33,11 @@ function Tables () {
       const newProduct = { id: product.id, title: product.title };
       if (!existingProducts) {
         localStorage.setItem('products', JSON.stringify([newProduct]));
+      } 
+      else {
+        const productsArray = JSON.parse(existingProducts);
+        productsArray.push(newProduct);
+        localStorage.setItem('products', JSON.stringify(productsArray));
       }
     } else {
       setCart(cart.filter(p => p.id !== product.id));
@@ -47,11 +52,11 @@ function Tables () {
       const existingFav = localStorage.getItem('fav');
       const newFav = { id: product.id, title: product.title };
       if (!existingFav) {
-        localStorage.setItem('products', JSON.stringify([newFav]));
+        localStorage.setItem('fav', JSON.stringify([newFav]));
       }
     } else {
       setFav(fav.filter(p => p.id !== product.id));
-      localStorage.removeItem('products');
+      localStorage.removeItem('fav');
     }
   };
 
