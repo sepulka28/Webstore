@@ -55,7 +55,7 @@ function NavbarElement () {
             <Nav.Link href="/home" style={{ color: "#181819"}}>Home</Nav.Link>
             
             <NavDropdown title="Products" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/action"></NavDropdown.Item>
+              
               <NavDropdown.Item href="/AC">
                 Armchairs & Chairs
               </NavDropdown.Item>

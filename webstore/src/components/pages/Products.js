@@ -1,16 +1,23 @@
+import React from "react";
 
-export class Product {
+  export class Product extends React.Component{
+  
   constructor(id, title, image, description) {
+    super();
     this.id = id;
     this.title = title;
     this.image = image;
     this.description = description;
+    this.cart = [];
+    this.fav = [];
+
   }
 
   addToCart() {
     const index = this.cart.findIndex(p => p.id === this.id);
+    const product = {...this};
     if (index === -1) {
-      this.cart.push({...this});
+      this.cart.push(product);
       const existingProducts = localStorage.getItem('products');
       const newProduct = { id: this.id, title: this.title };
       if (!existingProducts) {
@@ -24,12 +31,17 @@ export class Product {
       this.cart = this.cart.filter(p => p.id !== this.id);
       localStorage.removeItem('products');
     }
+
+    return this.cart;
+    
   }
+  
 
   addToFav() {
     const index = this.fav.findIndex(p => p.id === this.id);
+    const product = {...this};
     if (index === -1) {
-      this.fav.push({...this});
+      this.fav.push(product);
       const existingFav = localStorage.getItem('fav');
       const newFav = { id: this.id, title: this.title };
       if (!existingFav) {
@@ -43,39 +55,11 @@ export class Product {
       this.fav = this.fav.filter(p => p.id !== this.id);
       localStorage.removeItem('fav');
     }
+
+    return this.fav;
   }
+  
 }
 
 export default Product;
 
-
-// class Sofas extends Furniture {
-//   constructor() {
-//     super();
-//     this.products = [
-//       new Product(
-//         14,
-//         "Sofa 1",
-//         Image19,
-//         "Elevate your living space with our rich and sumptuous brown leather sofa, designed for comfort and style. Sink in and savor the experience."
-//       ),
-//       new Product(
-//         15,
-//         "Sofa 2",
-//         Image20,
-//         "Create a luxurious oasis in your living space with our white long sofa, perfect for those who seek both style and comfort."
-//       ),
-//       new Product(
-//         16,
-//         "Sofa 3",
-//         Image21,
-//         "Indulge in ultimate comfort with our luxurious quilt grey sofa, perfect for creating a cozy and inviting atmosphere in any living space."
-//       ),
-//       new Product(
-//         17,
-//         "Sofa 4",
-//         Image22,
-//         "Indulge in the serene comfort of our deep green sofa - the perfect addition to elevate your living space's elegance and simplicity."
-//       ),
-//     ];
-//   }}

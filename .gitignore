@@ -9,6 +9,8 @@ server/node_modules
 /.pnp
 .pnp.js
 .env
+.notes.js
+
 
 # testing
 /coverage
