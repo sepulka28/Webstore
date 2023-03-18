@@ -10,6 +10,7 @@ import Image5 from '../images/image5.jpg';
 import Image6 from '../images/image6.jpg';
 import Image7 from '../images/image7.jpg';
 
+// Hard-coded, but could be loaded from a database or API. TODO
 class AC extends Product{
 
   render() {
