@@ -24,6 +24,7 @@ function AC () {
 
   function isProductInCart(chair) {
     return cart.some((p) => p.id === chair.id);
+   
   }
 
   function isProductInFavorites(chair) {
@@ -54,4 +55,4 @@ function AC () {
   
 
 
-export {AC};
+export default AC;

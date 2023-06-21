@@ -11,7 +11,7 @@ import Footer from "./inc/Footer"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Dashboard from "./pages/Dashboard"
-import { AC } from "./pages/AC"
+import AC from "./pages/AC"
 import ShoppingBag from './pages/ShoppingBag';
 import Favourites from './pages/Favourites';
 import Tables from './pages/Tables';
