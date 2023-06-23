@@ -2,28 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 
-
-import Image15 from '../images/image15.jpg';
-import Image16 from '../images/image16.jpg';
-import Image17 from '../images/image17.jpg';
-import Image18 from '../images/image18.jpg';
-
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosHeart } from "react-icons/io";
 
-function Dressers () {
+import { Dressers } from '../ProductData';
+
+function Dresser () {
   
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState([]);
-
-  const products = [
-
-    { id: 10, title: "Dresser 1", image: Image15, description: "Elevate your modern bathroom decor with our sleek and stylish dresser. Perfect for storing your essentials in a sophisticated way. Order now!" },
-    { id: 11, title: "Dresser 2", image: Image16, description: "Elevate your storage game with our spacious black dresser, featuring numerous drawers to keep your belongings organized in style." },
-    { id: 12, title: "Dresser 3", image: Image17, description: "Light-brown dresser, designed to bring practicality to your cozy space. With various drawers, offering ample storage for all your essentials." },
-    { id: 13, title: "Dresser 4", image: Image18, description: "Upgrade your bedroom with our narrow, deep brown dresser made of high-quality wood and featuring five spacious drawers." },
- 
-  ]
 
   const addCartProduct = product => {
     const index = cart.findIndex(p => p.id === product.id);
@@ -39,6 +26,7 @@ function Dressers () {
       localStorage.removeItem('products');
     }
   };
+
   
   const addLikedProduct = product => {
     const index = fav.findIndex(p => p.id === product.id);
@@ -57,17 +45,18 @@ function Dressers () {
 
   return (
     <div className="ac_card_container container-fluid " >
-    {products.map((product) => (
-    <div key={product.id}>
+
+    {Dressers.map((dresser) => (
+    <div key={dresser.id}>
     <Card className="card_ac" style={{ width: '18rem' }}>
-      <Card.Img variant="center" src={product.image} className="image" />
+      <Card.Img variant="center" src={dresser.images} className="image" />
       <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
+        <Card.Title>{dresser.title}</Card.Title>
         <Card.Text>
-          {product.description}
+          {dresser.description}
         </Card.Text>
-        <FaShoppingCart className='shop_bag_icon_card' onClick={() => addCartProduct(product)} style={{ color: cart.some((p) => p.id === product.id) ? "#3fa24f" : "black" }}/> <IoIosHeart className='favourite_icon_card' 
-        onClick={() => addLikedProduct(product)} style={{ color: fav.some((p) => p.id === product.id) ? "red" : "black" }}/>
+        <FaShoppingCart className='shop_bag_icon_card' onClick={() => addCartProduct(dresser)} style={{ color: cart.some((p) => p.id === dresser.id) ? "#3fa24f" : "black" }}/> <IoIosHeart className='favourite_icon_card' 
+        onClick={() => addLikedProduct(dresser)} style={{ color: fav.some((p) => p.id === dresser.id) ? "red" : "black" }}/>
       </Card.Body>
     </Card>
     </div>
@@ -77,4 +66,4 @@ function Dressers () {
   );
   }
 
-export default Dressers;
+export default Dresser;
