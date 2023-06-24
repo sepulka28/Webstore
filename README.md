@@ -1,2 +1,3 @@
-# Hestia is an e-commerce app created with React.js. It's functionalities include user registration and login, displaying products from the menu and adding them to/removing from cart/liked items. 
+# Hestia - an e-commerce React app. 
+The app's functionalities include user registration and login, displaying products from the menu and adding them to/removing from cart/liked items. 
 The project is still in a development process. Future features include: seaeching for products, online payment functionality, displaying liked and added to cart items in corresponding sections and adding contact form.
