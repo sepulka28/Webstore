@@ -9,6 +9,9 @@ Screenshots:
 <img width="1865" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/1a82c149-1474-4b4c-8f5b-584828caca6f">
 
 <img width="1840" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/5435a90a-1cfd-48f8-98c6-5b528da61171">
+<img width="1760" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/bb0f6c9b-66ed-4f33-99b1-104f5aee9139">
+<img width="1797" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/67389b70-6e3d-4802-b70e-9cb731543044">
+
 
 
 
