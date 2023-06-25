@@ -16,7 +16,7 @@ Screenshots:
 ### Installation
 
 ```
-git clone [https://github.com/johnuberbacher/invoice-generator](https://github.com/sepulka28/Webstore.git)
+git clone [https://github.com/sepulka28/Webstore.git]
 
 npm install
 
