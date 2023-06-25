@@ -32,8 +32,6 @@ npm start / npm run build
 
 - [ ] Online payment 
 
-- [ ] Store invoices in Firebase DB
-
 - [ ] Create contact form
 
 
