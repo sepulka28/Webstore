@@ -13,15 +13,6 @@ Screenshots:
 <img width="1760" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/bb0f6c9b-66ed-4f33-99b1-104f5aee9139">
 <img width="1797" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/67389b70-6e3d-4802-b70e-9cb731543044">
 
-### Installation
-
-```
-git clone [https://github.com/sepulka28/Webstore.git]
-
-npm install
-
-npm start / npm run build
-```
 
 ### To-Do
 - [ ] Displaying cart items in cart section
