@@ -31,3 +31,6 @@ yarn-error.log*
 
 password.txt
 notes.txt
+
+src/components/pages/favourites.js
+src/components/pages/shoppingbag.js
