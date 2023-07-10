@@ -1,10 +1,17 @@
 import React from 'react';
 
 function ShoppingBag() {
+
+
+
+
+
   return (
-    <div className="body">
-     <p>hey</p>
+   <div className="ac_card_container container-fluid ">
+
+  
     </div>
+    
   );
   }
 
