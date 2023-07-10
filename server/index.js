@@ -15,7 +15,12 @@ const fs = require('fs');
 const path = require('path');
 
 const filePath = path.join(__dirname, 'password.txt');
-const uri = fs.readFileSync(filePath, 'utf8');
+const password = fs.readFileSync(filePath, 'utf8');
+
+const uri = `mongodb+srv://ewelinazaabik:${password}@cluster1.rcxsbcj.mongodb.net/?retryWrites=true&w=majority`;
+
+
+console.log(uri)
 
 
 mongoose.connect(uri, {
