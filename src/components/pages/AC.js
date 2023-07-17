@@ -17,7 +17,7 @@ function AC () {
     if (index === -1) {
       setCart([...cart, { ...product }]);
       const existingProducts = localStorage.getItem('products');
-      const newProduct = { id: product.id, title: product.title };
+      const newProduct = { id: product.id, title: product.title, image: product.images };
       if (!existingProducts) {
         localStorage.setItem('products', JSON.stringify([newProduct]));
       }
