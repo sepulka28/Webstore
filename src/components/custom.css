@@ -87,12 +87,27 @@
   max-height: 5rem;
 }
 
+.register_button {
+  background-color: #538b74 !important;
+  border: none !important;
+  align-items: center !important;
+  max-width: 8rem;
+  max-height: 5rem;
+}
+
 
 .log_in_button:hover{
   opacity: 0.8;
 }
 
 .log_in_icon {
+  margin-bottom: 4px;
+  
+
+}
+
+
+.register_icon {
   margin-bottom: 4px;
   
 

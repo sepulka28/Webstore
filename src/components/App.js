@@ -12,8 +12,6 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Dashboard from "./pages/Dashboard"
 import AC from "./pages/AC"
-import ShoppingBag from "./pages/ShoppingBag";
-import Favourites from './pages/Favourites';
 import Tables from './pages/Tables';
 import Dressers from './pages/Dressers';
 import Sofa from './pages/Sofas';
@@ -43,10 +41,6 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} /> 
 
         <Route path="/AC" element={<AC />} /> 
-
-        <Route path="/shoppingbag" element={<ShoppingBag />} /> 
-
-        <Route path="/favourites" element={<Favourites />} /> 
 
         <Route path="/tables" element={<Tables />} /> 
 

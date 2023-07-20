@@ -6,10 +6,9 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { BsHandbag } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
-import { BsSuitHeart } from "react-icons/bs";
-import { TfiSearch } from "react-icons/tfi";
+import { TfiSearch } from "react-icons/tfi"; 
+import { MdAppRegistration } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
@@ -88,10 +87,8 @@ function NavbarElement () {
           </div>
 
           <div className="navbar_icons">
-          
-          <a href="/shoppingbag"><span className="shopping_bag"><BsHandbag className='shop_bag_icon'/> SHOPPING BAG</span></a>
-          <a href="/favourites"><span className="favourites"><BsSuitHeart className='fav_icon'/> FAVOURITES</span></a>
           <Button className="log_in_button" href="/login" onClick={buttonName === 'LOG OUT' ? handleLogOut : () => {}}><span><VscAccount className="log_in_icon"/> {buttonName}</span></Button>
+          <Button className="register_button" href="/register"><span><MdAppRegistration className="register_icon"/> REGISTER</span></Button>
           </div>
           
     </Container>
