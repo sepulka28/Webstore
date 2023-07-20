@@ -6,12 +6,11 @@ The project is still in a development process.
 
 Screenshots:
 
-<img width="1826" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/3573eab1-41b4-433d-bd7f-0f55b63a38cd">
-<img width="1865" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/1a82c149-1474-4b4c-8f5b-584828caca6f">
 
-<img width="1840" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/5435a90a-1cfd-48f8-98c6-5b528da61171">
-<img width="1760" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/bb0f6c9b-66ed-4f33-99b1-104f5aee9139">
-<img width="1797" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/67389b70-6e3d-4802-b70e-9cb731543044">
+<img width="1886" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/b3e0d1e1-9100-430d-8326-f84c7858c10f">
+<img width="1871" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/f2520c9e-2723-4ceb-843d-71dc411a7fab">
+<img width="1850" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/80726455-91a5-477f-b4d0-456480f4ef01">
+<img width="1798" alt="image" src="https://github.com/sepulka28/Webstore/assets/114609669/396360ba-b251-42a6-98b1-4862497b4bcd">
 
 
 ### To-Do
