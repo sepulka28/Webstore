@@ -1,14 +1,21 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
-import { Sofas } from '../ProductData';
+import { ProductData } from '../ProductData';
 
 function Sofa () {
+
+  const sofas = ProductData.Sofas.map((sofa) => ({
+    id: sofa.id,
+    title: sofa.title,
+    images: sofa.images,
+    description: sofa.description,
+  }));
 
 
   return (
     <div className="ac_card_container container-fluid " >
-    {Sofas.map((sofa) => (
+    {sofas.map((sofa) => (
     <div key={sofa.id}>
     <Card className="card_ac" style={{ width: '18rem' }}>
       <Card.Img variant="center" src={sofa.images} className="image" />

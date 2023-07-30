@@ -12,8 +12,11 @@ import { MdAppRegistration } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
+import ProductSearch from './ProductSearch';
+
 
 function NavbarElement () {
+  
 
   const [buttonName, setButtonName] = useState('LOG IN');
   const [isLoggedin, setIsLoggedin] = useState(true);
@@ -80,6 +83,7 @@ function NavbarElement () {
               placeholder="Search for products"
               className="search_bar"
               aria-describedby="basic-addon2"
+              onChange={ProductSearch.handleChange}
               
             />
             <Button className="search_btn"><TfiSearch className="search_icon"/></Button>  
