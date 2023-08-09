@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -9,37 +9,45 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { VscAccount } from "react-icons/vsc";
 import { TfiSearch } from "react-icons/tfi"; 
 import { MdAppRegistration } from "react-icons/md";
-import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Fuse from 'fuse.js';
 
-import ProductSearch from './ProductSearch';
+import {ProductData} from '../ProductData';
 
 
 function NavbarElement () {
   
-
-  const [buttonName, setButtonName] = useState('LOG IN');
-  const [isLoggedin, setIsLoggedin] = useState(true);
-
+  const [searchInput, setSearchInput] = useState(""); 
+  
   const navigate = useNavigate();
 
-  let location = useLocation();
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  
+  };
 
-    useEffect(() => {
-    if(location.pathname === '/dashboard'){
-      setButtonName("LOG OUT");
-    }
-    
-  }, [location.pathname]);
+    const options = {
+      keys: ['title', 'description'], 
+      threshold: 0.3 
+    };
+  
+    const fuse = new Fuse(Object.values(ProductData).flatMap(category => category.products), options);
+  
+    const handleSearchSubmit = (e) => {
+      e.preventDefault();
+  
+      const searchResults = fuse.search(searchInput);
+      
+      if (searchResults.length > 0) {
+        const firstResult = searchResults[0].item;
+        navigate(firstResult.path);
+      } else {
+        console.log("No matching results found");
+      }
+    };
 
-  const handleLogOut = () => {
 
-    localStorage.clear();
-    setIsLoggedin(false);
-    navigate('/login');
-
-    return isLoggedin;
-  }; 
 
   return (
     <Navbar className="nav" expand="lg">
@@ -77,13 +85,14 @@ function NavbarElement () {
           </div>
 
           <div>
-        <Form className="form">
+        <Form className="form" onSubmit={handleSearchSubmit}>
             <Form.Control
               type="search"
+              value={searchInput}
               placeholder="Search for products"
               className="search_bar"
               aria-describedby="basic-addon2"
-              onChange={ProductSearch.handleChange}
+              onChange={handleChange}
               
             />
             <Button className="search_btn"><TfiSearch className="search_icon"/></Button>  
@@ -91,7 +100,7 @@ function NavbarElement () {
           </div>
 
           <div className="navbar_icons">
-          <Button className="log_in_button" href="/login" onClick={buttonName === 'LOG OUT' ? handleLogOut : () => {}}><span><VscAccount className="log_in_icon"/> {buttonName}</span></Button>
+          <Button className="log_in_button" href="/login"><span><VscAccount className="log_in_icon"/> LOG IN</span></Button>
           <Button className="register_button" href="/register"><span><MdAppRegistration className="register_icon"/> REGISTER</span></Button>
           </div>
           
